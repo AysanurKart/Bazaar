@@ -1,4 +1,4 @@
-const fs = require ("fs");
+var fs = require ("fs");
 
 const THE_PATH = __dirname + "/../../voresdata";
 const THE_FILES = "/data.json";
@@ -8,20 +8,19 @@ class database {
         this.users = this.openFile(THE_FILES);
     }
 
-    saveFile(fileName, contentString){
+    saveFile(fileName, contentString) {
         fs.writeFileSync(THE_PATH + fileName, contentString);
     }
     openFile(fileName) {
-        const fil = fs.readFileSync(THE_PATH + fileName);
-        return JSON.parse(fil);
+        const file = fs.readFileSync(THE_PATH + fileName);
+        return JSON.parse(file);
     }
     saveUser(user){
         this.users.push(user);
         this.saveFile(THE_FILES, JSON.stringify(this.users));
     }
     findUser(user){
-        this.users = this.users.filter((x) => x.mail != user.email);
-        this.saveFile(THE_FILES, JSON.stringify(this.users));
+        return this.users.find((x) => user.email == x.email);
     }
 }
 module.exports = new database();
