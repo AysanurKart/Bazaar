@@ -23,4 +23,10 @@ router.post("/login", (req, res) => {
     }
 });
 
+router.delete("/delete", (req, res) => {
+    const user = new model(req.body.email, req.body.password);
+    db.deleteUser(user);
+    res.status(200).send(true);
+});
+
 module.exports = router;

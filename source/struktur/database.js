@@ -22,5 +22,9 @@ class database {
     findUser(user){
         return this.users.find((x) => user.email == x.email);
     }
+    deleteUser(user){
+        this.users=this.users.filter((x) => x.email != user.email);
+        this.saveFile(THE_FILES, JSON.stringify(this.users));
+    }
 }
 module.exports = new database();
