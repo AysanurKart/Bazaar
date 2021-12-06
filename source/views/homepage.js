@@ -28,3 +28,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", (event) => {
+document.getElementById("logout").addEventListener("submit",(event) => {
+    event.preventDefault();
+    
+    const user = JSON.parse(localStorage.getItem("user"));
+
+        fetch("http://localhost:2000/users/logout", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+        .then((response) => response.json())
+        .then((response) => {
+            if (response) {
+                req.session = null;
+                location.href = "index.html";
+            }
+            })
+        .catch(() =>{
+            window.alert("error");
+        });
+
+          });
+});
