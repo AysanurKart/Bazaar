@@ -29,22 +29,6 @@ router.delete("/delete", (req, res) => {
     res.status(200).send(true);
 });
 
-router.delete("/logout", (req, res) => {
-    const user = new model(req.body.email, req.body.password);
-    db.findUser(user);
-    if (req.session) {
-        req.session.destroy(err => {
-          if (err) {
-            res.status(400).send('Unable to log out')
-          } else {
-            res.send('Logout successful')
 
-          }
-        });
-      } else {
-        res.end()
-      }
-
-});
 
 module.exports = router;

@@ -10,11 +10,29 @@
 </head>
 <body>
     <h1>B A Z A A R</h1>
+
     <form id="delete_user">
         <input value="Delete" type="submit">
     </form>
-    <form id="logout">
-        <input value="logout" type="submit">
+
+    <h2>OPRET EN VARER</h2>
+
+    <form id="submitForm">
+        Title: <input type="input" name="title"><br/>
+        Price: <input type="number" name="price"><br/>
+        Brand: <select name="brand">
+            <option value="Samsung">Samsung</option>
+            <option value="Apple">Apple</option>
+            <option value="Huawei">Huawei</option>
+        </select>
+
+        File: <input type="file" name="thumbnail"><br/>
+        Submit: <button type="submit">Opret varen</button>
     </form>
+
+    Refresh: <button id="refresh">Refresh</button>
+
+    <table id="list"></table>
+
 </body>
 </html>

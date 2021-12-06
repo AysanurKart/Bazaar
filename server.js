@@ -11,5 +11,4 @@ app.use("/users", BrugerKontrolCenter);
 
 app.listen(PORT, () => {
     console.log(`server is listening on http://localhost:${PORT}`)
-
 });
