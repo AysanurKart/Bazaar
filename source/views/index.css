@@ -1,18 +1,18 @@
 h1 {
     text-align: center;
-    color:black
+    color: black;
 }
 
 body {
-    background-color: cadetblue;
+    background-color: blanchedalmond;
     text-align: left;
 }
 
 input {
     text-align: center;
-    display:inline-block;
+    display: inline-block;
     padding: 12px 20px;
-    margin:8px 0;
+    margin: 8px 0;
     box-sizing: border-box;
     margin-left: 40%;
     margin-right: 40%;
