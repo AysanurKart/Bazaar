@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .then((response) => {
             if (response) {
                 localStorage.removeItem("user");
-                location.href = "/tilmeld.html";
+                location.href = "tilmeld.html";
             }
             })
         .catch(() =>{
@@ -29,3 +29,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
+let form = document.getElementById("submitForm");
+form.addEventListener("submit", async(e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    await fetch('http://localhost:9000/item', {
+        method: 'POST',
+        body: formData
+    });
+});
