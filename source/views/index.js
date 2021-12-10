@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     const user = localStorage.getItem("user");
+    // Hvis brugeren findes bliver man omdirigeret til homepage://
     if (user) {
         location.href = "homepage.html";
     }
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     window.alert("Wrong Info");
                 }
         })
-        .catch(() =>{
+        .catch(() =>{ 
             window.alert("error");
         });
     });

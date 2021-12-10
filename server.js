@@ -2,6 +2,8 @@ const express = require("express")
 const app = express();
 const PORT = 2000;
 
+app.get("/repos/owner/repo/commits");
+
 const BrugerKontrolCenter = require("./source/kontrolcenter/kontrolbruger");
 
 app.use(express.static('./source/views'));

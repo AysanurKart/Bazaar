@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .then((response) => {
             if (response) {
                 localStorage.removeItem("user");
-                location.href = "tilmeld.html";
+                location.href = "/tilmeld.html";
             }
             })
         .catch(() =>{
